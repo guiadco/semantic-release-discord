@@ -19,7 +19,6 @@
   "author": "guiadco",
   "license": "MIT",
   "devDependencies": {
-    "@guiadco/semantic-release-discord": "^1.2.0",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^9.0.1",
     "@types/semantic-release": "^17.2.3",
