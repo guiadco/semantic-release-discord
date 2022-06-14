@@ -7,7 +7,7 @@ export function preparemessage(config: Config, context: Context) {
   if (!env.DISCORD_CUSTOM_MESSAGE || !config.custom_message) {
     logger.log('prepare default message.');
     const message = {
-      text: `The :rocket: ${nextRelease.type} version "${nextRelease.version}" :heavy_check_mark: has been released.\n\n${nextRelease.notes}`,
+      text: `The :rocket: ${nextRelease.type} :rocket: version :tada: ${nextRelease.version} :tada: has been released.\n\n${nextRelease.notes}`,
       username: config.username
     }
     return message;
