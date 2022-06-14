@@ -1,6 +1,6 @@
 {
   "name": "@guiadco/semantic-release-discord",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "semantic-release plugin to get release notifications on discord via webhooks",
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "author": "guiadco",
   "license": "MIT",
   "devDependencies": {
+    "@guiadco/semantic-release-discord": "^1.2.0",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^9.0.1",
     "@types/semantic-release": "^17.2.3",
