@@ -1,9 +1,9 @@
 import SemanticReleaseError from "@semantic-release/error";
 import { getDiscordVars } from "./lib/getDiscordVars";
 
-export function verifyConditions(getDiscordVars, context) {
+export function verifyConditions(context) {
   const { options, logger } = context;
-  const { discordWebhook, discordWebhookEnVar, discordUsername, discordUsernameEnVar } = getDiscordVars;
+  const { discordWebhook, discordWebhookEnVar, discordUsername, discordUsernameEnVar } = getDiscordVars();
 
   if (!options.plugins.find(p => p === '@semantic-release/release-notes-generator'
     || p?.[0] === '@semantic-release/release-notes-generator')) {

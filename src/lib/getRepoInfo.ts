@@ -1,12 +1,12 @@
 import { URL } from "url";
 
-module.exports = repositoryUrl => {
-  if (repositoryUrl.startsWith('git@')) {
-    repositoryUrl = 'ssh://' + repositoryUrl
+export function repositoryUrl(url) {
+  if (url.startsWith('git@')) {
+    url = 'ssh://' + repositoryUrl
   }
-  const parsedUrl = new URL(
+  const parsedUrl = new url.URL(
     // without these replacements we will get a TypeError [ERR_INVALID_URL]
-    repositoryUrl.replace(
+    url.replace(
       /\.([a-z])*:/i,
       rep => rep.substring(0, rep.length - 1) + '/'
     )
@@ -16,6 +16,6 @@ module.exports = repositoryUrl => {
     .replace('.git', '') // remove .git
     .replace(':', '') // remove any colons from path (present in github for example)
   const hostname = parsedUrl.hostname
-  const GITURL = `https://${parsedUrl.host}/${path}`
-  return { path, GITURL, hostname }
+  const URL = `https://${parsedUrl.host}/${path}`
+  return { path, URL, hostname }
 }

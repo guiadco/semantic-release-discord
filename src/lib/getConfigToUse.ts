@@ -1,6 +1,6 @@
 import micromatch from 'micromatch';
 
-module.exports = (pluginConfig, context) => {
+export function getConfigToUse(pluginConfig, context) {
   const {
     branch: { name }
   } = context
