@@ -5,4 +5,12 @@ export function getDiscordVars() {
     discordUsername = process.env[discordUsernameEnVar],
     discordChannelEnVar = 'DISCORD_CHANNEL',
     discordChannel = process.env[discordChannelEnVar]
+   return {
+     discordWebhookEnVar,
+     discordWebhook,
+     discordUsernameEnVar,
+     discordUsername,
+     discordChannelEnVar,
+     discordChannel
+   }
 }
