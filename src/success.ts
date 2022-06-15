@@ -1,20 +1,20 @@
-import { Config } from "./Config";
-import { Context } from "semantic-release";
+import SemanticReleaseError from "@semantic-release/error";
+import { getDiscordVars } from "./lib/getDiscordVars";
+import { webhook } from "./lib/webhook";
+import { preparemessage } from "./lib/message";
 
-import { webhook } from './webhook';
-
-import { preparemessage } from './message';
-
-export async function success(config: Config, context: Context) {
+export async function success(getDiscordVars, context) {
   const { logger } = context;
   logger.log('Executing webhook.');
+  // const hook = context.env.DISCORD_WEBHOOK || config.webhook;
+  const removeHashMarkdowns = (text) =>
+    text.replace(/\n### /g, "\n").replace(/\n## /g, "\n")
+  const removeDoubleNewLines = (text) => text.replace(/\n\n/g, "\n")
+  const removeFirstLine = (text) => {
+    const [, ...lines] = text.split("\n")
+    return lines.join("\n")
+  }
+  // const discordMessage = preparemessage(context);
 
-  const hook = context.env.DISCORD_WEBHOOK || config.webhook;
-  const message = preparemessage(config, context);
-
-  await webhook({
-    hook,
-    message,
-    logger
-  })
+  // await postMessageToDiscord(discordMessage, config.webhook)
 }

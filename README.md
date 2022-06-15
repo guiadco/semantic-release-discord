@@ -9,7 +9,7 @@ Add the plugin to your npm-project
 ### NPM
 
 ```shell
-npm install semantic-release-discord
+npm install @guiadco/semantic-release-discord -D
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ Add the plugin to your semantic-release config:
   "plugins": [
     "@semantic-release/release-notes-generator",
     [
-      "semantic-release-discord",
+      "@guiadco/semantic-release-discord",
       {
         "custom_message": "my custom message",
         "webhook": "https://discord.example.com",
@@ -39,7 +39,3 @@ it will be used instead of the `webhook` provided in the config.
 
 If the ```DISCORD_CUSTOM_MESSAGE``` environment variable is defined in your environment,
 it will be used instead of `the custom_message` provided in the config.
-
-### Thanks
-
-- @ttrobisch/semantic-release-mattermost
