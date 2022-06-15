@@ -24,7 +24,8 @@ Add the plugin to your semantic-release config:
       "@guiadco/semantic-release-discord",
       {
         "discordWebhook": "https://discord.com/api/webhooks/546546465/jdkjskljdlja-asjdhlasjkldjkl-l_j",
-        "discordUsername": "semantic-release"
+        "discordUsername": "semantic-release",
+        "discordChannel": "foo"
       }
     ]
   ]
@@ -38,3 +39,6 @@ it will be used instead of the `discordWebhook` provided in the config.
 
 If the ```DISCORD_USERNAME``` environment variable is defined in your environment,
 it will be used instead of the `discordUsername` provided in the config.
+
+If the ```DISCORD_CHANNEL``` environment variable is defined in your environment,
+it will be used instead of the `discordChannel` provided in the config.
