@@ -1,16 +1,16 @@
 export function getDiscordVars() {
-  const discordWebhookEnVar = 'DISCORD_WEBHOOK'
-  const discordWebhook = process.env[discordWebhookEnVar]
-  const discordUsernameEnVar = 'DISCORD_USERNAME'
-  const discordUsername = process.env[discordUsernameEnVar]
-  const discordChannelEnVar = 'DISCORD_CHANNEL'
-  const discordChannel = process.env[discordChannelEnVar]
+  const discordWebhookEnVar = process.env['DISCORD_WEBHOOK']
+  const discordWebhook = String;
+  const discordUsernameEnVar = process.env['DISCORD_USERNAME']
+  const discordUsername = String;
+  const discordChannelEnVar = process.env['DISCORD_CHANNEL']
+  const discordChannel = String;
    return {
      discordWebhookEnVar,
      discordWebhook,
      discordUsernameEnVar,
      discordUsername,
      discordChannelEnVar,
-     discordChannel
+     discordChannel,
    }
 }
