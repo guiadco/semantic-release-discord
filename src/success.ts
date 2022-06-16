@@ -1,21 +1,7 @@
-import {Config} from "./Config";
-import {Context} from "semantic-release";
+import SemanticReleaseError from "@semantic-release/error";
+import { getDiscordVars } from "./lib/getDiscordVars";
 
-import { webhook } from './webhook';
-
-export async function success(config: Config, context: Context) {
-    const {nextRelease, logger} = context;
-    logger.log('Executing webhook.');
-
-    const hook = context.env.DISCORD_WEBHOOK || config.webhook;
-    const message = {
-        text: `The ${nextRelease.type} version "${nextRelease.version}" has been released.\n\n${nextRelease.notes}`,
-        username: config.username
-    }
-
-    await webhook({
-        hook,
-        message,
-        logger
-    })
+export async function success(context) {
+  const { logger } = context;
+  const { discordWebhook, discordWebhookEnVar, discordUsername, discordUsernameEnVar } = getDiscordVars();
 }

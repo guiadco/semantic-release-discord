@@ -9,7 +9,7 @@ Add the plugin to your npm-project
 ### NPM
 
 ```shell
-npm install semantic-release-discord
+npm install @guiadco/semantic-release-discord -D
 ```
 
 ## Usage
@@ -21,10 +21,11 @@ Add the plugin to your semantic-release config:
   "plugins": [
     "@semantic-release/release-notes-generator",
     [
-      "semantic-release-discord",
+      "@guiadco/semantic-release-discord",
       {
-        "webhook": "https://discord.example.com",
-        "username": "semantic-release"
+        "discordWebhook": "https://discord.com/api/webhooks/546546465/jdkjskljdlja-asjdhlasjkldjkl-l_j",
+        "discordUsername": "semantic-release",
+        "discordChannel": "foo"
       }
     ]
   ]
@@ -34,8 +35,10 @@ Add the plugin to your semantic-release config:
 ### Environment variable
 
 If the ```DISCORD_WEBHOOK``` environment variable is defined in your environment,
-it will be used instead of the webhook provided in the config.
+it will be used instead of the `discordWebhook` provided in the config.
 
-### Thanks
+If the ```DISCORD_USERNAME``` environment variable is defined in your environment,
+it will be used instead of the `discordUsername` provided in the config.
 
-- ttrobisch/semantic-release-mattermost
+If the ```DISCORD_CHANNEL``` environment variable is defined in your environment,
+it will be used instead of the `discordChannel` provided in the config.
